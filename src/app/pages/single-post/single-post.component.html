@@ -1,0 +1,37 @@
+<div class="containter-fluid ">
+    <div class="row">
+        <div class="col-md-9 ">
+            <div class="card text-left ms-md-5 shadow-effect mt-5">
+                <img class="card-img-top "
+                    [src]="singlePostData.postImgPath"
+                    alt="">
+                <div class="card-body">
+                    <small class="bg-light text-danger text-center"> {{singlePostData.category.category}} </small>
+                    <small class="bg-light text-sucess text-center ms-2" *ngIf="singlePostData.isFeatured"> Featured </small>
+                    <small class="bg-light text-info text-center ms-2">Views- {{singlePostData.views}} </small>
+                    <small class="bg-light text-warning text-center ms-2"> {{singlePostData.createdAt.toMillis()| date}}</small>
+                    <h1 class="mt-3 mb-3">{{singlePostData.title}}</h1>
+
+                    <p class="card-text content-text"[innerHTML]="singlePostData.content">
+                       
+                    </p>
+
+                </div>
+
+            </div>
+            <app-comment-form></app-comment-form>
+            <app-comment-list></app-comment-list>
+        </div>
+        <div class="col-md-3 mt-5 container-fluid text-center">
+            <div  *ngFor="let similarPost of similarPosts">
+            <app-post-card [postData]="similarPost" [routerLink]= "['category/',similarPost?.category?.category,similarPost?.category?.categoryId,'post/',similarPost?.id,'post/',similarPost?.id]"></app-post-card>
+            <!-- <app-post-card [postData]="singlepost" [routerLink]= "['category/',categoryName,singlepost?.category?.categoryId,'post/',singlepost?.id]" ></app-post-card> -->
+
+        </div>
+        </div>
+        <!-- <div class="col-md-4">
+            <app-post-card></app-post-card>
+            <app-post-card></app-post-card>
+          </div> -->
+    </div>
+</div>

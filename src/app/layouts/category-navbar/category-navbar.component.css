@@ -1,0 +1,13 @@
+nav {
+    margin-top: 52px;
+    height: 40px;
+    /* background-color: var(--navbar-footer-color); */
+ }
+ .nav-link{
+    text-transform: uppercase; 
+    color: var(--primary-color);
+}
+
+.nav-color{
+   background-color: #F9F9F9;
+}

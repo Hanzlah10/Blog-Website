@@ -1,0 +1,14 @@
+<div class="card text-left mb-5 shadow-effect "  [routerLink]= "['post',postData?.id]"  >
+  <img class="card-img-top"
+    [src]="postData?.postImgPath"
+    alt="post-img">
+  <div class="card-body">
+    <small class="bg-light text-left text-danger ">{{postData?.category?.category}}</small>
+    <small class="bg-light text-left text-primary ms-3" *ngIf="postData?.isFeatured">Featured</small>
+    <small class="bg-light text-left text-success ms-3">Views- {{postData.views}}</small>
+    <h5 class="mt-1">{{postData?.title}}</h5>
+    <p>{{postData?.excerpt}}.</p>
+    <small class="bg-light text-center text-warning">LAST UPDATED : {{postData?.createdAt.toMillis() | date}}</small>
+  </div>
+</div>
+

@@ -1,0 +1,35 @@
+<section class="featured-section ">
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-md-12 text-center mt-5">
+                <h2 class="text-white"> Featured Posts </h2>
+                <p class="text-white"> Discover captivating stories and insightful articles in our collection of
+                    Featured Posts. </p>
+            </div>
+        </div>
+        <div class="col-md-10 offset-md-1  text-left mt-5 text-center" >
+            <div class="row" >
+                <div class="col-lg-3" *ngFor="let featuredPost of isFeaturedArray">
+                    <app-post-card [postData]= "featuredPost"  ></app-post-card>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container-fluid">
+        <div class="col-md-12 text-center mt-5">
+            <h2>Latest Post</h2>
+            <p>Stay up to date with the freshest content as we bring you the latest and greatest stories from our blog.
+            </p>
+        </div>
+        <div class="col-md-8 offset-md-2 text-center mt-5">
+            <div class="row">
+                <div class=" col-md-4 " *ngFor="let lastestPost of latestPost">
+                    <app-post-card [postData]="lastestPost"></app-post-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

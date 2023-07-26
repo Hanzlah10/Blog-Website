@@ -1,0 +1,24 @@
+<div class="bg-theme py-5">
+    <div class="container-fluid col-md-8 offset-md-2 mt-5">
+        <h1 class="text-white">{{categoryName}} </h1>
+        <p class="text-white">Explore our diverse range of categories and find captivating content that caters to your interests and curiosity.</p>
+    </div>
+</div>
+<div class="container-fluid text-center col-md-8 offset-md-2 mt-5">
+    <div class="row">
+
+        <div class="col-md-4" *ngFor="let singlepost of singleCategoryPost">
+            <!-- <app-post-card [postData]="singlepost" [routerLink]="['/post', singlepost?.id]" ></app-post-card> -->
+<app-post-card [postData]="singlepost" [routerLink]= "['category/',categoryName,singlepost?.category?.categoryId,'post/',singlepost?.id]" ></app-post-card>
+            
+        </div>
+    </div>
+</div>
+
+
+<!-- <div>{{singlepost.category.categoryId}}</div> -->
+<!-- <app-post-card [postData]="singlepost" 
+routerLink="category/categoryName/singlepost/category.categoryId/post/singlepost.id">
+</app-post-card> -->
+<!-- <app-post-card [postData]="singlepost" [routerLink]= "['category/',categoryName,singlepost.category.categoryId,'post/',singlepost.id]" ></app-post-card> -->
+<!-- <app-post-card [postData]="singlepost" [routerLink]= "['category',categoryName,singlepost.category.categoryId,'post',singlepost.id]" ></app-post-card> -->

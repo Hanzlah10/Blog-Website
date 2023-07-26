@@ -1,0 +1,7 @@
+.card{
+    max-width: 300px;
+    display: inline-block;
+    justify-content: center;
+    border:none;
+    min-height: 550px;
+}
